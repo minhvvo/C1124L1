@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson9: Conditional</title>
+</head>
+<body>
+<h1>Conditional</h1>
+<ol>
+    <li>
+        if
+        <ul>
+            <li>if (thiếu)</li>
+            <li>if-else (đủ)</li>
+            <li>if-else-if (bậc thang)</li>
+            <li>nested-if (if lồng)</li>
+        </ul>
+    </li>
+    <li>swich-case</li>
+</ol>
+<script>
+    const radius= +prompt("Vui lòng nhập vào bán kính hình tròn");
+    if (radius >=0){
+      const area=Math.PI*radius*radius;
+      console.log('Area is'+area.toFixed(2));
+    }
+    const number=+prompt("Vui lòng nhập một số bất kì:");
+    if (number %2===0) {
+     console.log("Đây là số chẵn");
+     } else {
+      console.log('Đây là số lẻ')
+    }
+    /*Nếu điểm >= 85 thì loại A
+    *Nếu điểm >=75 thì loại B
+    * Nếu điểm >=55 thì loại C
+    * Nếu điểm >= 45 thì loại D
+    * <45 loại E
+     */
+    const number = parseInt(prompt("Nhap diem"));
+    if (number >= 85) {
+        alert(`Hạng: A`);
+    } else if (number >= 75) {
+        alert(`Hạng: B`);
+    } else if (number >= 55) {
+        alert(`Hạng: C`);
+    } else if (number >= 45) {
+        alert(`Hạng: D`);
+    } else if (number < 45) {
+        alert(`Hạng: E`);
+        const a = +prompt("Nhập vào số thứ nhất");
+        const b = +prompt("Nhập vào số thứ hai");
+        const c = +prompt("Nhập vào số thứ ba");
+        if (a > b) {
+            if (a > c) {
+                alert(a + " là số lớn nhất");
+            } else {
+                alert(c + " là số lớn nhất");
+            }
+        } else {
+            if (b > c) {
+                alert(b + "là số lớn nhất");
+            } else {
+                alert(c + "là số lớn nhất")
+            }
+        }
+</script>
+</body>
+</html>
