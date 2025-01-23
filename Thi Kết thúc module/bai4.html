@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>BAI 4</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    input, button {
+      margin: 10px 0;
+      padding: 15px;
+      width: calc(100% - 30px);
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #374dda;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #2a5acf;
+    }
+
+    h2 {
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .customer {
+      background: #e9ecef;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 4px;
+    }
+
+    .customer:nth-child(even) {
+      background: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Quản lý khách hàng</h1>
+  <input id="maKhachHang" placeholder="Mã khách hàng" required type="text">
+  <input id="tenKhachHang" placeholder="Tên khách hàng" required type="text">
+  <input id="soDienThoai" placeholder="Số điện thoại" required type="text">
+  <input id="diaChi" placeholder="Địa chỉ" required type="text">
+  <input id="email" placeholder="Email" required type="email">
+  <button id="themKhachHang">Thêm khách hàng</button>
+
+  <h2>Danh sách khách hàng</h2>
+  <div id="customerList"></div>
+</div>
+
+<script>
+  const customerList = [];
+
+  document.getElementById('themKhachHang').addEventListener('click', function () {
+    const maKhachHang = document.getElementById('maKhachHang').value;
+    const tenKhachHang = document.getElementById('tenKhachHang').value;
+    const soDienThoai = document.getElementById('soDienThoai').value;
+    const diaChi = document.getElementById('diaChi').value;
+    const email = document.getElementById('email').value;
+
+    const khachHang = {
+      maKhachHang,
+      tenKhachHang,
+      soDienThoai,
+      diaChi,
+      email
+    };
+
+    customerList.push(khachHang);
+    displayCustomers();
+    clearInputs();
+  });
+
+  function displayCustomers() {
+    const customerListDiv = document.getElementById('customerList');
+    customerListDiv.innerHTML = '';
+
+    if (customerList.length === 0) {
+      customerListDiv.innerHTML = 'Danh sách khách hàng trống.';
+      return;
+    }
+
+    customerList.forEach(kh => {
+      const customerDiv = document.createElement('div');
+      customerDiv.className = 'customer';
+      customerDiv.textContent = `Mã KH: ${kh.maKhachHang}, Tên: ${kh.tenKhachHang}, SĐT: ${kh.soDienThoai}, Địa chỉ: ${kh.diaChi}, Email: ${kh.email}`;
+      customerListDiv.appendChild(customerDiv);
+    });
+  }
+
+  function clearInputs() {
+    document.getElementById('maKhachHang').value = '';
+    document.getElementById('tenKhachHang').value = '';
+    document.getElementById('soDienThoai').value = '';
+    document.getElementById('diaChi').value = '';
+    document.getElementById('email').value = '';
+  }
+</script>
+</body>
+</html>

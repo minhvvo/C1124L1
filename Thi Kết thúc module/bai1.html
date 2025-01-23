@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 1:</title>
+</head>
+<body>
+<h1>Bài 1</h1>
+<label for="arrayInput">Nhập mảng số nguyên (cách nhau bằng dấu phẩy và số phần tử<20):</label><br>
+<input type="text" id="arrayInput" placeholder="Ví dụ: 1,2,4,7"><br>
+<button onclick="findMultiples()">Tính tổng</button>
+
+<div class="result" id="result"></div>
+
+<script>
+    function findMultiples() {
+        const arrayInput = document.getElementById('arrayInput').value;
+        const arr = arrayInput.split(',').map(Number);
+        let totalSum = 0;
+        let multiples = [];
+
+        arr.forEach(num => {
+            if (num % 3 === 0 && num % 5 === 0) {
+                multiples.push(num);
+                totalSum += num;
+            }
+        });
+
+        const multiplesList = multiples.length > 0 ? multiples.join(', ') : 'Không có bội chung ';
+        document.getElementById('result').innerText = `bội chung của 3 và 5: ${multiplesList}\nTổng các số bội chung của 3 và 5: ${totalSum}`;
+    }
+</script>
+
+
+</body>
+</html>

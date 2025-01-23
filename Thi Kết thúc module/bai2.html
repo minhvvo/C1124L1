@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi"> <head>
+  <meta charset="UTF-8"> <title>Bài 2</title>
+</head>
+<body>
+<h1>Bài 2</h1>
+
+<p>Nhập điểm (0-100) :</p>
+<input type="number" id="scoreInput" min="0" max="100">
+<button onclick="roundScore()">Làm tròn điểm</button>
+
+<p id="roundedScore"></p>
+
+<script>
+  function roundScore() {
+    const score = parseInt(document.getElementById("scoreInput").value);
+
+    if (score < 0 || score > 100) {
+      document.getElementById("roundedScore").textContent = "Điểm không hợp lệ. Vui lòng nhập điểm từ 0 đến 100.";
+      return;
+    }
+
+    if (score < 50 || score < 48) {
+      document.getElementById("roundedScore").textContent = `Điểm gốc: ${score}. Học sinh thi trượt.`;
+      return;
+    }
+
+    const nextMultipleOfFive = Math.ceil(score / 5) * 5;
+    const difference = nextMultipleOfFive - score;
+
+    if (difference < 3) {
+      document.getElementById("roundedScore").textContent = `Điểm làm tròn: ${nextMultipleOfFive}`;
+    } else {
+      document.getElementById("roundedScore").textContent = `Điểm gốc: ${score}`;
+    }
+  }
+</script>
+</body>
+</html>
