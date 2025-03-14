@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>
+    Ứng dụng chuyển đổi tiền tệ
+</h2>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <td><input id="money" type="number" placeholder="Enter amount"></td>
+        <td>
+            <select id="fromCurrency">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+            <select id="toCurrency">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="convert()">Convert</button>
+        </td>
+    </tr>
+</table>
+<p id="result"></p>
+<script>
+    function convert() {
+        let money = parseFloat(document.getElementById("money").value);
+        let fromCurrency = document.getElementById("fromCurrency").value;
+        let toCurrency = document.getElementById("toCurrency").value;
+        let result;
+        if (isNaN(money) || money <= 0) {
+            document.getElementById("result").innerText = "Tiền phải là số dương";
+        }
+        if (fromCurrency === "VND" && toCurrency === "USD") {
+            result = money / 23000;
+        } else if (fromCurrency === "USD" && toCurrency === "VND") {
+            result = money * 23000;
+        } else {
+            result = money;
+        }
+        document.getElementById("result").innerText = result;
+    }
+</script>
+</body>
+</html>
