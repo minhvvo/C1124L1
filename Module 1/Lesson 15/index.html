@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    Khai báo hàm
+    function sayHello(whoiam) {
+        console.log("Xin chào " + whoiam);
+    }
+
+    sayHello("Lớp C11");
+    sayHello("Huy");
+    sayHello("Dương");
+    const num = +prompt("Nhập vào số lượng HV muôn thêm:");
+    let students
+    [i] = prompt("Nhập tên học viên thứ" +)
+    document.write(students.join(","));
+    for (const student of students) {
+        sayHello(student);
+    }
+    console.log("Huy","Dương","Trí",1,2,3);
+    const result = sayHello("Huy");
+    console.log(result);
+
+    function sum (a ,b) {
+        if(isNaN(a)) {
+            return " Đối số phải là một siis nguyên!";
+        }
+    return a + b;
+    }
+    const result = sum(10,2);
+    console.log(result);
+
+    function isEven(number) {
+        return number % 2 === 0;
+    }
+
+</script>
 </body>
 </html>

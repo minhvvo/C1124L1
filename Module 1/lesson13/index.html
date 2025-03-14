@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Lesson 13: Arrrey</title>
 </head>
 <body>
-$END$
+<h1>Lesson 13: Arrey</h1>
+<ul>
+    <li>Volvo</li>
+    <li>BMW </li>
+    <li>Bentley</li>
+</ul>
+<script>
+    const cars = new Arrey ('Volvo', 'BMW', 'Bentley','Maybach');
+    document.write("<ul>");
+    for (let i = 0;i < cars.length; i++) {
+        document.write("<li>"+cars[i] +"</li>");
+    }
+    document.write("</ul>");
+</script>
 </body>
 </html>

@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    color: #333;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+#game-board div {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#game-board div:hover {
+    background-color: #f0f0f0;
+}
+
+#game-status {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+#restart-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00ff0d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restart-button:hover {
+    background-color: #b30000;
+}

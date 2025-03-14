@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Viết mã sạch</title>
 </head>
 <body>
-$END$
+<script>
+    internal
+    const number = +prompt("Nhập vào một số bất kì");
+    const isEven = number % 2 === 0;
+    if (isEven) {
+        alert("Đây là số chẵn");
+    } else {
+        alert("đây là số lẻ");
+    }
+    function isLeapYear(year) {
+        let isLeapyear = false;
+        if (year % 4 === 0) {
+            if (year % 100 === 0) {
+                if (year % 400 === 0) {
+                    isLeapyear = true;
+                }
+            } else {
+                isLeapyear = true;
+            }
+        }
+        return isLeapYear;
+    }
+
+    if (isLeapYear(2023)) {
+        console.log("Yes");
+    } else {
+        console.log("No");
+    }
+    const radius = +prompt("Nhập bán kính hình tròn");
+    if (radius >= 0) {
+        var area =Math.PI * radius * radius;
+        console.log("Area is" + area);
+    }
+</script>
 </body>
 </html>

@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    document.write("Bắt đầu vòng lặp!<br>");
+    let counter = 0;
+    //debugger;
+    do {
+        if (counter === 3) {
+        //   break;
+        // }
+        counter ++;
+        if (counter === 3) {
+            continue;
+        }
+        document.write(`${counter}break<br>`);
+        counter++;
+    } while (counter <= 10);
+    document.write("Vòng Lặp đã chạy xong ");
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 10; j++) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    const center= "CodeGym";
+    for (let i =0; i <center.length;i++) {
+        document.write(center[i] + "<br>");
+    }
+    for (const c of center) {
+        document.write(c +"<br>");
+    }
+    for (let i = center.length -1; i>= 0;i--) {
+        document.write(center[i]);
+    }
+    for (const (centerKey in center) {
+        document.write(center[centerKey] + "<br>");
+    }
+    [1 ,2,3,4,5].forEach(function (item) {
+        document.write(item + "<br>");
+    }
+    for ( let i = 1; i <= 10; i++) {
+        for (let j = 2; j <= 10 ; j++) {
+            document.write(i +"*"+ j "=" +(i * j));
+        }
+    }
+</script>
 </body>
 </html>

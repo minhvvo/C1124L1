@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Lesson 17 : OOP 1</title>
 </head>
 <body>
-$END$
+<table>
+    <tr>
+        <td>Tên</td>
+        <td>Học</td>
+        <td>Tuổi</td>
+        <td>Địa chỉ</td>
+        <td>email</td>
+        <td>job</td>
+    </tr>
+    <tr>
+        <td id="firstName"></td>
+        <td id="lastName"></td>
+        <td id="age"></td>
+        <td id="address"></td>
+        <td id="job"></td>
+    </tr>
+</table>
+<script>
+    const personName = "Huy";
+    const personAge = 20;
+    const personAddress = "America Dinh";
+
+
+    //cách 1
+    const person1 = {
+        firstName:"Huy",
+        lastName:"Bùi",
+        age:20,
+        address :"America Đình"
+        email :"huybui@gmail.com"
+        job :"Thất Nghiệp",
+    }
+    document.getElementById("firstName").innerText = person1 .firstName;
+    document.getElementById("lastName").innerText = person1.lastName;
+    document.getElementById("age").innerText = person1 .age;
+    document.getElementById("address").innerText = person1.address;
+
+
+</script>
 </body>
 </html>
